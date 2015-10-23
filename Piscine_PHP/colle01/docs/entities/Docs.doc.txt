@@ -1,0 +1,63 @@
+**********************************************************************
+******************************SHIP CLASS******************************
+**********************************************************************
+
+Constructor takes Application and an array containing : array('name'=>...)
+
+gets:
+	id
+	name
+	size
+	hp
+	hpmax
+	spmax
+	sp
+	speed
+	moved
+	maneuver
+	position
+	direction
+	power
+	image
+	moved
+	weapons
+
+Methods:
+
+function setposition($x, $y) 
+function setpowers(array $arsenal) 
+function play_actions(array $actions) 
+function new_turn() 
+function get_area() 
+function is_collide(Movable $a, Movable $b)
+function is_out(Ship $ship)
+function forward($length)
+function collision(Ship $ship)
+function turn_left()
+function turn_right()
+function shoot()
+function repair($pp)
+function repairShield($pp)
+function take_damage(Weapon $weapon)
+function get_maneuvers(Array $moves)
+
+
+**********************************************************************
+*****************************WEAPON CLASS*****************************
+**********************************************************************
+
+Constructor takes Application and an array containing : array('name'=>...)
+
+gets:
+	closerange
+	midrange
+	longrange
+	splash
+	weapons
+	name
+
+Methods:
+
+function __get($name)
+function shoot(Ship $shooter, Ship $target)
+function charge_munitions($var)

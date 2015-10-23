@@ -1,0 +1,452 @@
+body
+{
+	background:#000;
+	position:relative;
+	margin:0;
+	padding:0;
+}
+h1
+{
+	display:block;
+	width: 800px;
+	margin: 0 auto;
+	margin-top:10px;
+	font-size: 24px;
+	line-height:50px;
+	font-weight:bold;
+	height: 50px;
+	color: #FFF;
+	text-align:center;
+	border:1px solid #777;
+	border-radius: 10px;
+	box-shadow: 0px 0px 50px #777;
+}
+div.player, div#board
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 10px;
+}
+div.player ul.list
+{
+	position: fixed;
+	top: 10px;
+	margin:0;
+	padding:0;
+	list-style:none;
+	z-index:1;
+}
+div.player ul.list div.infos, div.player ul.list div.img
+{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 60px;
+	width: 80px;
+	margin: 5px 10px;
+	padding:0;
+}
+	div.player ul.list div.img img
+	{
+		width: 80px;
+		height: 60px;
+		margin: 0;
+		padding:0;
+	}
+	div.player.one ul.list
+	{
+		left:0;
+	}
+	div.player.two ul.list
+	{
+		right:-2px;
+	}
+		div.player ul.list li
+		{
+			position:relative;
+			background:#000;
+			display:block;
+			width: 200px;
+			height: 70px;
+			margin: 5px 0;
+			border:1px solid #777;
+		}
+		div.player ul.list li:hover
+		{
+			height: 90px;
+		}
+		div.player ul.list li.title
+		{
+			font-size: 24px;
+			line-height:50px;
+			font-weight:bold;
+			height: 50px;
+			z-index:2 !important;
+			display:block;
+			position:relative;
+		}
+		div.player.one ul.list li.title
+		{
+			left:0px !important;
+			text-align: right;
+			padding-right: 10px;
+		}
+		div.player.two ul.list li.title
+		{
+			right:0px !important;
+			text-align: left;
+			padding-left: 10px;
+		}
+		div.player.one ul.list li
+		{
+			left:-100px;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+			box-shadow: 5px 0px 10px #555;
+		}
+		div.player.two ul.list li
+		{
+			right:-100px;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+			box-shadow: -5px 0px 10px #555;
+		}
+			div.player ul.list li p
+			{
+				display: none;
+			}
+			div.player ul.list li:hover p
+			{
+				display: block;
+				line-height: 15px;
+				color:#DDD;
+				margin:5px 5px 0 0;
+				padding:0;
+				text-align:center;
+				font-style: italic;
+			}
+
+div.player ul.list div.img span.status
+{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 0px;
+	right: 0;
+	border-radius: 5px;
+	border: 1px solid #000;
+}
+	div.player ul.list div.img span.status.on
+	{
+		background:green;
+	}
+	div.player ul.list div.img span.status.off
+	{
+		background:red;
+	}
+
+div.player ul.list div.infos span.hp, div.player ul.list div.infos span.shield
+{
+	display:block;
+	margin: 2px 0;
+	padding: 0;
+	height: 10px;	
+	border: 1px solid #777;
+	max-width: 80px;
+}
+div.player ul.list div.infos span.hp
+{
+	background: #af4242;
+}
+div.player ul.list div.infos span.shield
+{
+	background: #474fad;
+}
+div.player ul.list div.infos span.pp
+{
+	display: block;
+	color:#DDD;
+	font-weight:bold;
+	margin-top: 10px;
+}
+
+div#board
+{
+	position:relative;
+	display:block;
+	width:1502px;
+	margin: 20px auto 80px auto;
+}
+
+div#board table
+{
+	background: url('./img/body_bg.jpg') top left repeat;
+	background-size: 100% 100%;
+	width: 1500px;
+	height: 1000px;
+	border-bottom: 1px solid #333;
+	border-right: 1px solid #333;
+	margin: auto;
+	box-shadow: 0px 0px 20px #AAA;
+}
+div#board table td
+{
+	width: 10px !important;
+	height: 10px !important;
+	border-bottom: 1px solid #333;
+	border-right: 1px solid #333;
+	border-left: 1px solid rgba(255,0,0,0);
+	border-top: 1px solid rgba(255,0,0,0);
+}
+
+div.action
+{
+	margin:0;
+	background:#000;
+	position: absolute;
+	top: -710px;
+	width: 400px;
+	text-align: center;
+	border:1px solid #777;
+	box-shadow: 0px 0px 10px #AAA;
+	padding-top: 20px;
+	z-index:15 !important;
+}
+div.action.one
+{
+	left: 10px;
+}
+div.action.two
+{
+	right: 10px;
+}
+	div.action ul.onglets
+	{
+		list-style: none;
+		margin:0;
+		padding:0;
+		position:absolute;
+		top: 20px;
+		width: 50px;
+		height:500px;
+	}
+	div.action.one ul.onglets
+	{
+		right:-40px;
+	}
+	div.action.two ul.onglets
+	{
+		left:-40px;
+	}
+		div.action ul.onglets li
+		{
+			border-top:1px solid #777;
+			border-bottom:1px solid #777;
+			background: #000;
+			margin: 10px 0;
+			width: 50px;
+			height:50px;
+		}
+		div.action.one ul.onglets li
+		{
+			border-right:1px solid #777;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+		div.action.two ul.onglets li
+		{
+			border-left:1px solid #777;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+		div.action ul.onglets li img
+		{
+			width: 40px;
+			height:40px;
+			margin-top: 5px;
+		}
+	div.action p.title
+	{
+		color: #DDD;
+		font-size:20px;
+		font-weight: bold;
+		margin:0 0 10px 0;
+		padding:0;
+		text-align: center;
+		font-style: italic;
+	}
+	div.action div.spec, div.action img.ship
+	{
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	div.action div.spec
+	{
+		width: 200px;
+		height: 150px;
+		padding-right: 10px;
+		margin-right: 20px;
+		color: #fff;
+	}
+	div.action img.ship
+	{
+		width:150px;
+		height:150px;
+	}
+div.action div.spec span.hp, div.action div.spec span.sp
+{
+	text-align: left;
+	color:#FFF;
+	display:block;
+	margin: 2px 0;
+	padding: 0;
+	height: 20px;	
+	border: 1px solid #777;
+	max-width: 180px;
+	line-height:20px;
+}
+div.action div.spec span.hp
+{
+	background: #af4242;
+}
+div.action div.spec span.sp
+{
+	background: #474fad;
+}
+div.action div.onglet.hidden
+{
+	display:none;
+}
+div.action div.onglet.pp
+{
+	height:200px;
+	max-height: 200px;
+}
+	div.action div.onglet p
+	{
+		margin:auto;
+		width: 250px;
+		color:#FFF;
+		font-size:16px;
+		border-bottom:1px solid #777;
+	}
+	div.action div.onglet.pp div.attrib
+	{
+		max-height: 150px;
+		overflow: auto;
+	}
+	div.action div.onglet.pp div.attrib ul
+	{
+		list-style: none;
+		margin:0;
+		padding:0;
+		color: #FFF;
+	}
+	div.action div.onglet.pp div.attrib ul li
+	{
+		font-size: 18px;
+		height: 30px;
+		line-height: 30px;
+	}
+	div.action div.onglet.pp div.attrib ul li span, div.action div.onglet.pp div.attrib ul li input
+	{
+		display:inline-block;
+		vertical-align: middle;
+	}
+	div.action div.onglet.pp div.attrib ul li span
+	{
+		width: 150px;
+		padding-right:50px;
+		text-align: right;
+	}
+	div.action div.onglet.pp div.attrib ul li input[type=text]
+	{
+		padding:0;
+		line-height: 14px;
+		width: 30px;
+		height: 20px;
+	}
+	div.action div.onglet.maneuvers div
+	{
+		width: 330px;
+		max-width: 330px;
+		height: 40px;
+		background: #333;
+		border: 1px solid #555;
+		margin:10px auto;
+		text-align: left;
+		padding: 0 4px;
+		overflow: hidden;
+	}
+	div.action div.onglet.maneuvers ul
+	{
+		overflow-x: auto;
+		overflow-y: hidden;
+		margin:0;
+		list-style: none;
+		padding: 0;
+		white-space: nowrap;
+		width: 330px;
+		height: 58px;
+	}
+	div.action div.onglet.maneuvers ul li
+	{
+		background-size:30px 30px;
+		border-radius: 3px;
+		/*background-color: #152c63;*/
+		background-color: #555;
+		display: inline-block;
+		width:30px;
+		height:30px;
+		margin: 5px 2px;
+		position:relative;
+	}
+	div.action div.onglet.maneuvers ul li.free
+	{
+		background-color: #154824;
+	}
+
+	div.action div.onglet.maneuvers ul li.FORW
+	{
+		background-image:url('../images/forward.png');
+	}
+	div.action div.onglet.maneuvers ul li.FREE_FORW
+	{
+		background-image:url('../images/forward_free.png');
+	}
+	div.action div.onglet.maneuvers ul li.TLEFT
+	{
+		background-image:url('../images/tleft.png');
+	}
+	div.action div.onglet.maneuvers ul li.FREE_TLEFT
+	{
+		background-image:url('../images/tleft_free.png');
+	}
+	div.action div.onglet.maneuvers ul li.TRIGHT
+	{
+		background-image:url('../images/tright.png');
+	}
+	div.action div.onglet.maneuvers ul li.FREE_TRIGHT
+	{
+		background-image:url('../images/tright_free.png');
+	}
+
+	div.action div.onglet.maneuvers ul li span
+	{
+		color:#FFF;
+		font-size:10px;
+		position: absolute;
+		top: 2px;
+		right: 2px;
+	}
+
+div#board div.ship
+{
+	box-sizing:border-box;
+	border:1px solid rgba(255,0,0,0.4);
+	position:absolute;
+	background:rgba(255,0,0,0.2);
+	z-index: 10;
+	margin:0;
+	padding:0;
+}
