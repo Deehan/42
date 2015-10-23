@@ -1,0 +1,4 @@
+#config file
+
+sayhi:
+    echo "hi"
