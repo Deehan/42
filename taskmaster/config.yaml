@@ -1,4 +1,7 @@
-#config file
+###################
+# Config file rules
+###################
 
 sayhi:
-    echo "hi"
+echo "hi"
+for file in *; do echo $file; sleep 5; done
