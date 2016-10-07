@@ -1,0 +1,40 @@
+<header class="page-header">
+    <h1>Modification</small>
+    </h1>
+</header>
+
+<section>
+    <form class="form-horizontal">
+      <md-input-container>
+         <label>Titre</label>
+         <input ng-model="obj.Title" type="text"/>
+       </md-input-container>
+        <select placeholder="Type" ng-model="obj.Type">
+           <option ng-repeat="type in types" value="{{type}}">
+               {{type}}
+           </option>
+        </select>
+        <select placeholder="Modèle" ng-model="obj.Model">
+           <option ng-repeat="model in models" value="{{model}}">
+               {{model}}
+           </option>
+        </select>
+        <md-input-container>
+           <label>Description</label>
+           <input ng-model="obj.Desc" type="text"/>
+         </md-input-container>
+        <md-input-container>
+           <label>Capacité</label>
+           <input ng-model="obj.Cap" type="number"/>
+         </md-input-container>
+         <md-input-container>
+            <label>Prix</label>
+            <input ng-model="obj.Price" type="number"/>
+          </md-input-container>
+        <section layout="row" layout-sm="column" layout-align="center center">
+          <a href="#/objects"><md-button md-no-ink class="md-primary">Annuler</md-button></a>
+          <md-button ng-click="deleteObject($index, obj.Index)" class="md-raised md-warn">Supprimer</md-button>
+          <md-button ng-click="updateObject(obj)" class="md-raised md-primary">Modifier</md-button>
+        </section>
+    </form>
+</section>

@@ -1,0 +1,42 @@
+<header class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">x</button>
+    <h3>Ajouter une annonce</h3>
+</header>
+<section class="modal-body">
+    <form name="objectForm" class="form-horizontal">
+      <md-input-container>
+         <label>Titre</label>
+         <input ng-model="obj.Title" type="text"/>
+       </md-input-container>
+        <select placeholder="Type" ng-model="obj.Type">
+           <option ng-repeat="type in types" value="{{type}}">
+               {{type}}
+           </option>
+        </select>
+        <select placeholder="Modèle" ng-model="obj.Model">
+           <option ng-repeat="model in models" value="{{model}}">
+               {{model}}
+           </option>
+        </select>
+        <md-input-container>
+           <label>Description</label>
+           <input ng-model="obj.Desc" type="text"/>
+         </md-input-container>
+        <md-input-container>
+           <label>Capacité</label>
+           <input ng-model="obj.Cap" type="number"/>
+         </md-input-container>
+         <md-input-container>
+            <label>Prix</label>
+            <input ng-model="obj.Price" type="number"/>
+          </md-input-container>
+          <md-input-container>
+             <label>Propriétaire</label>
+             <input ng-model="obj.Own" type="text"/>
+           </md-input-container>
+    </form>
+</section>
+<footer class="modal-footer">
+  <md-button md-no-ink ng-click="dismiss();" class="md-primary">Annuler</md-button>
+  <md-button ng-click="addObject(obj);dismiss();" class="md-raised md-primary">Ajouter</md-button>
+</footer>

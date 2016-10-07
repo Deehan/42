@@ -1,0 +1,26 @@
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-image.mdl-card {
+  background: url('../img/no-poster.jpg') center / cover;
+}
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.demo-card-image__filename {
+  color: #fff;
+}
+.demo-card-square > .mdl-card__title {
+    margin-top: 0;
+  }
+
+.mdl-layout__header-row > .mdl-button {
+    top: 50%;
+}
+
+.mdl-layout {
+  margin-top: -60px;
+}

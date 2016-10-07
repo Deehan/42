@@ -1,0 +1,75 @@
+<section class="well form-inline">
+    <section>
+      <form name="filters" class="form-vertical">
+        <md-select placeholder="Type" ng-model="filter.Type">
+            <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
+        </md-select>
+        <md-select placeholder="Modèle" ng-model="filter.Model">
+          <md-option ng-repeat="model in models" value="{{model}}">{{model}}</md-option>
+        </md-select>
+
+        <table><tr><th></th><th></th><th></th></tr>
+          <tr><td style="width:75%">
+            <md-slider ng-model="filter.Cap" flex class="md-primary" md-discrete step="1" min="0" max="20">
+            </md-slider>
+          </td>
+          <td>
+             <md-input-container>
+                <label>Capacité</label>
+                <input ng-model="filter.Cap" type="number"/>
+              </md-input-container>
+            </td></tr>
+        <tr>
+          <td style="width:75%">
+            <md-slider ng-model="filter.Price" flex class="md-primary" md-discrete step="100" min="0" max="9900" step="100">
+            </md-slider>
+          </td>
+          <td>
+          <md-input-container>
+            <label>Prix</label>
+            <input ng-model="filter.Price" type="number"/>
+          </md-input-container>
+          </td></tr>
+        </table>
+
+      </form>
+      <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button ng-click="filterObject(filter)" class="md-raised md-primary">Filtrer</md-button>
+        <md-button md-no-ink ng-click="trier('Price')" class="md-primary">Trier par prix</md-button>
+        <md-button md-no-ink ng-click="trier('Type')" class="md-primary">Trier par type</md-button>
+      </section>
+    </section>
+</section>
+  <div flex layout="row" layout-align="center" layout-wrap>
+  <div flex="300"  flex-md="175" flex-sm="125" layout="row" layout-wrap style="height: 100px;">
+    <span class="card-container index-content" ng-repeat="obj in objects | orderBy:tri:reverse | filter:search" flex="30" layout-padding>
+      <div class="card">
+        <a href="#/objects/edit/{{obj.Index}}">
+          <div class="card-thumbnail" style="background: url(http://images.forum-auto.com/mesimages/122902/LE%20BON%20COIN%201.jpg) no-repeat;background-size: 100% 100%;">
+    		    <div class="card-price">{{obj.Price | currency}}
+    				</div>
+    			</div>
+        </a>
+    		<div class="card-content">
+    			<div class="card-title">{{obj.Title}}</div>
+    			<div class="card-description">{{obj.Desc}}</div>
+          <md-divider ng-if="!$last"></md-divider><br>
+    			<div class="card-informations">
+    				<div class="card-info">
+    					<img class="card-icon" src="../img/icon_car.png">
+              <div class="card-info-text">{{obj.Type}}</div>
+            </div>
+    				<div class="card-info">
+    					<img class="card-icon" src="../img/icon_people.png">
+              <div class="card-info-text">{{obj.Cap}}</div>
+    				</div>
+    				<div class="card-info">
+    					<img class="card-icon" src="../img/icon_localisation.png">
+    					<div class="card-info-text">Undefined</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </span>
+    </div>
+  </div>
