@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>	
+	<input type="text" id="left" value=""/>
+	<select id="op">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+		<option value="%">%</option>
+	</select>
+	<input type="text" id="right" />
+	<input type="submit" value="Try me!"/>
+	<script type="text/javascript">
+	setInterval(function(){
+		alert("Please, use me...");
+	},30000);
+	$(document).ready(function(){
+		$('input[type=submit]').click(function()
+		{
+			var left = $('input#left').val();
+			var right = $('input#right').val();
+			var op = $('input#op').val();
+
+			if (left == '' || right == '')
+				alert("Error :(");
+					else if (right == 0 && (op == "/" || op == "%"))
+						echo("It\'s over 9000!");
+					else if (left >= 0 && right >= 0)
+					{
+						eval('var res = '+left+op+right)
+						echo(res);
+					}
+					else
+						alert("Error :(");
+					});
+	});
+	function echo(msg)
+	{
+		alert(msg);
+		console.log(msg);
+	}
+	</script>
+</body>
+</html>
